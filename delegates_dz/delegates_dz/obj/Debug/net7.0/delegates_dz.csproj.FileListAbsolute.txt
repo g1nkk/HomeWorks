@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\delegates_dz\delegates_dz\bin\Debug\net7.0\delegates_dz.exe
+C:\Users\User\source\repos\delegates_dz\delegates_dz\bin\Debug\net7.0\delegates_dz.deps.json
+C:\Users\User\source\repos\delegates_dz\delegates_dz\bin\Debug\net7.0\delegates_dz.runtimeconfig.json
+C:\Users\User\source\repos\delegates_dz\delegates_dz\bin\Debug\net7.0\delegates_dz.dll
+C:\Users\User\source\repos\delegates_dz\delegates_dz\bin\Debug\net7.0\delegates_dz.pdb
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\delegates_dz.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\delegates_dz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\delegates_dz.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\delegates_dz.AssemblyInfo.cs
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\delegates_dz.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\delegates_dz.dll
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\refint\delegates_dz.dll
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\delegates_dz.pdb
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\delegates_dz.genruntimeconfig.cache
+C:\Users\User\source\repos\delegates_dz\delegates_dz\obj\Debug\net7.0\ref\delegates_dz.dll

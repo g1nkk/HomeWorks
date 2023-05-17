@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "delegates_dz/1.0.0": {
+        "runtime": {
+          "delegates_dz.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "delegates_dz/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
