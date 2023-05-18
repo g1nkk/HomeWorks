@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\bin\Debug\net7.0\word_frequency.exe
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\bin\Debug\net7.0\word_frequency.deps.json
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\bin\Debug\net7.0\word_frequency.runtimeconfig.json
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\bin\Debug\net7.0\word_frequency.dll
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\bin\Debug\net7.0\word_frequency.pdb
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\word_frequency.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\word_frequency.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\word_frequency.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\word_frequency.AssemblyInfo.cs
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\word_frequency.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\word_frequency.dll
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\refint\word_frequency.dll
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\word_frequency.pdb
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\word_frequency.genruntimeconfig.cache
+C:\Users\User\source\repos\homeworks\HomeWorks\word_frequency\word_frequency\obj\Debug\net7.0\ref\word_frequency.dll
