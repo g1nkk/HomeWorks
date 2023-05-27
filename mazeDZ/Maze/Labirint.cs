@@ -9,10 +9,10 @@ namespace Maze
         public int height; // высота лабиринта (количество строк)
         public int width; // ширина лабиринта (количество столбцов в каждой строке)
 
-        private int playerX=1;
-        private int playerY=1;
+        private int playerX = 1;
+        private int playerY = 1;
 
-        private int health=100;
+        private int health = 100;
 
         private int collectedMedals;
         private int totalMedals = 0;
@@ -38,7 +38,6 @@ namespace Maze
 
         private void Generate()
         {
-
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
@@ -113,6 +112,12 @@ namespace Maze
             }
         }
 
+        public void KeyPressed(Keys key)
+        {
+            MovePlayer(key);
+            MoveEnemies();
+        }
+
         public void MovePlayer(Keys key)
         {
             int newX = playerX;
@@ -177,15 +182,20 @@ namespace Maze
                 {
                     maze[playerY, playerX].type = MazeObject.MazeObjectType.HALL;
                     health += 5;
-                    if (health > 100){ health = 100; }
+                    if (health > 100) { health = 100; }
                     UpdatePanel();
                 }
             }
         }
 
+        public void MoveEnemies()
+        {
+
+        }
+
         public void UpdatePanel()
         {
-            parent.Text = "Собрано медалей: " + collectedMedals + " | Здоровье: " + health + "%";
+            parent.Text = "Собрано медалей: " + collectedMedals + "/" + collectedMedals + " | Здоровье: " + health + "%";
         }
     }
 }
