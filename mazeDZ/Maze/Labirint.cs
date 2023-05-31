@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace Maze
 {
-    class Labirint
+    public class Labirint
     {
         public int height; // высота лабиринта (количество строк)
         public int width; // ширина лабиринта (количество столбцов в каждой строке)
 
+        private int playerMoves=0;
         private int playerX = 1;
         private int playerY = 1;
 
         private int health = 100;
 
         private int collectedMedals;
-        private int totalMedals = 0;
+        public int totalMedals = 0;
 
         public MazeObject[,] maze;
         public PictureBox[,] images;
+
+        private List<Enemy> enemies = new List<Enemy>();
 
         public static Random r = new Random();
         public Form parent;
@@ -50,17 +54,19 @@ namespace Maze
                         current = MazeObject.MazeObjectType.WALL;
                     }
 
-                    // в 1 случае из 250 - кладём денежку
-                    if (r.Next(250) == 0)
+                    // в 1 случае из 150 - кладём медальку
+                    if (r.Next(150) == 0)
                     {
                         current = MazeObject.MazeObjectType.MEDAL;
-                        totalMedals++;
+                        totalMedals+=1;
                     }
 
                     // в 1 случае из 250 - размещаем врага
                     if (r.Next(250) == 0)
                     {
                         current = MazeObject.MazeObjectType.ENEMY;
+                        var enemy = new Enemy(x, y);
+                        enemies.Add(enemy);
                     }
 
                     // лекарство
@@ -112,10 +118,10 @@ namespace Maze
             }
         }
 
-        public void KeyPressed(Keys key)
+        public void KeyPressed(Keys key) 
         {
-            MovePlayer(key);
             MoveEnemies();
+            MovePlayer(key);
         }
 
         public void MovePlayer(Keys key)
@@ -141,6 +147,13 @@ namespace Maze
 
             if (maze[newY, newX].type != MazeObject.MazeObjectType.WALL)
             {
+                playerMoves++;
+
+                if(playerMoves % 10 ==0)
+                {
+                    SpawnEnemy();
+                }
+
                 images[playerY, playerX].BackgroundImage = new MazeObject(MazeObject.MazeObjectType.HALL).texture;
 
                 playerX = newX;
@@ -148,7 +161,12 @@ namespace Maze
 
                 images[playerY, playerX].BackgroundImage = new MazeObject(MazeObject.MazeObjectType.CHAR).texture;
 
-                if (playerX == width - 1)
+                if(enemies.Count==0)
+                {
+                    MessageBox.Show("Победа - врагов не осталось!");
+                    parent.Close();
+                }
+                else if (playerX == width - 1)
                 {
                     MessageBox.Show("Победа - найден выход!");
                     parent.Close();
@@ -168,15 +186,7 @@ namespace Maze
                 else if (maze[playerY, playerX].type == MazeObject.MazeObjectType.ENEMY)
                 {
                     maze[playerY, playerX].type = MazeObject.MazeObjectType.HALL;
-
-                    int damage = r.Next(20, 26);
-                    health -= damage;
-
-                    if (health <= 0)
-                    {
-                        MessageBox.Show("Поражение - закончилось здоровье!");
-                        parent.Close();
-                    }
+                    PlayerDamage();
                 }
                 else if (maze[playerY, playerX].type == MazeObject.MazeObjectType.MEDICINE)
                 {
@@ -187,15 +197,43 @@ namespace Maze
                 }
             }
         }
+        private void SpawnEnemy()
+        {
+
+            int posX = r.Next(width);
+            int posY = r.Next(height);
+
+            if (maze[posY, posX].type == MazeObject.MazeObjectType.HALL)
+            {
+                var enemy = new Enemy(posX, posY);
+                enemies.Add(enemy);
+            }
+            else SpawnEnemy();
+        }
+
+        public void PlayerDamage()
+        {
+            int damage = r.Next(20, 26);
+            health -= damage;
+
+            if (health <= 0)
+            {
+                MessageBox.Show("Поражение - закончилось здоровье!");
+                parent.Close();
+            }
+        }
 
         public void MoveEnemies()
         {
-
+            foreach (var enemy in enemies)
+            {
+                enemy.Move(this);
+            }
         }
 
         public void UpdatePanel()
         {
-            parent.Text = "Собрано медалей: " + collectedMedals + "/" + collectedMedals + " | Здоровье: " + health + "%";
+            parent.Text = "Собрано медалей: " + collectedMedals + "/" + totalMedals + " | Здоровье: " + health + "%" + " | Враги: " + enemies.Count;
         }
     }
 }

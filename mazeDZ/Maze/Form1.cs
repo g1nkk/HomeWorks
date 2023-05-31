@@ -20,8 +20,8 @@ namespace Maze
 
             BackColor = Color.FromArgb(255, 92, 118, 137);
 
-            int sizeX = 40;
-            int sizeY = 20;
+            int sizeX = 30;
+            int sizeY = 30;
 
             Width = sizeX * 16 + 16;
             Height = sizeY * 16 + 40;
@@ -29,13 +29,13 @@ namespace Maze
         }
 
         public void StartGame() {
-            l = new Labirint(this, 40, 20);
+            l = new Labirint(this, 30, 30);
             l.Show();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            l.MovePlayer(e.KeyCode);
+            l.KeyPressed(e.KeyCode);
             l.UpdatePanel();
         }
     }

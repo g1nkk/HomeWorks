@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace Maze
 {
-    class MazeObject
+    public class MazeObject
     {
         public enum MazeObjectType { HALL, WALL, MEDAL, ENEMY, CHAR, MEDICINE };
 
