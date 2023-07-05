@@ -1,3 +1,6 @@
+using System.Drawing.Imaging;
+using System.Windows.Forms;
+
 namespace DonatelloDZ
 {
     public partial class Form1 : Form
@@ -6,6 +9,16 @@ namespace DonatelloDZ
         {
             InitializeComponent();
             ClientSize = new Size(400, 400);
+            save();
+        }
+
+        void save()
+        {
+            Bitmap bitmap = new Bitmap(Width, Height);
+            DrawToBitmap(bitmap, new Rectangle(0, 0, Width, Height));
+
+            bitmap.Save("boat.png", ImageFormat.Png);
+
         }
 
         protected override void OnPaint(PaintEventArgs e)

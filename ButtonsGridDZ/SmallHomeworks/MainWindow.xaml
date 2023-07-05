@@ -1,0 +1,34 @@
+﻿<Window x:Class="SmallHomeworks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SmallHomeworks"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FFA52B2A">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Background="#FF0000FE" Margin="5,6,5,5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"></Button>
+        <Button Background="White" Margin="5,0,5,5" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4"></Button>
+        <Button Background="#FF008001" Margin="0,0,5,5" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"></Button>
+        <Button Background="#FFFE0000" Margin="0,0,5,5" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"></Button>
+        <Button Background="#FFFEA500" Margin="0,0,5,5" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"></Button>
+        <Button Background="Pink" Margin="0,0,5,5" Grid.Row="3" Grid.Column="1"></Button>
+        <Button Background="Gray" Margin="0,0,5,5" Grid.Row="4" Grid.Column="1"></Button>
+        <Button Background="#FFFFFF01" Margin="0,0,5,5" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2"></Button>
+        <Button Background="#FFEE82EF" Margin="0,0,5,5" Grid.Row="3" Grid.Column="3"></Button>
+        <Button Background="#FF81007F" Margin="0,0,5,5" Grid.Row="4" Grid.Column="3"></Button>
+    </Grid>
+</Window>
