@@ -1,0 +1,55 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FlowDocument.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FlowDocument.Resources>
+    
+    <Paragraph Style="{StaticResource header}">
+		Sesame-crusted tuna with green tea noodle salad
+	</Paragraph>
+	
+    <Paragraph Style="{StaticResource text}">
+        <Figure Width="320" Padding="5" HorizontalAnchor="ColumnRight">
+            <BlockUIContainer>
+                <Image Source="salad.jpeg"/>
+            </BlockUIContainer>
+        </Figure>
+    </Paragraph>
+	
+	<Paragraph Style="{StaticResource text}" Margin="44">
+		INGREDIENTS
+		2 tbs white sesame seeds
+		1 tbs black sesame seeds
+		1/2 tsp togarashi (Japanese seven spice, from Asian food stores)
+		1 tsp coarsely ground black pepper
+		400g sashimi-grade tuna, skin on
+		1 tbs extra virgin olive oil
+		320g green tea noodles
+		1 cup (140g) frozen edamame, thawed
+		2 long green shallots, thinly sliced
+		Pickled ginger, to serve
+		Shiso leaves (from Asian grocers, substitute Thai basil or coriander), to serve
+		GINGER AND SOY DRESSING
+		100ml sesame oil
+		4cm piece (20g) ginger, finely grated
+		2 tsp soy sauce
+		2 tsp fish sauce
+		Juice of 2 small limes
+	</Paragraph>
+			
+    <Paragraph Style="{StaticResource text}" Margin="0,50">
+		METHOD
+		1.On a tray, combine white and black sesame seeds with togarashi, pepper and 1 tsp salt flakes. Press tuna into sesame mixture to coat all over, then cover and set aside at room temperature for 10 minutes.
+		2.For the ginger and soy dressing, combine all ingredients in a bowl. Set aside. Heat a medium frypan over high heat. Drizzle tuna with oil. Sear tuna for 30 seconds each side – you want it to remain rare inside. Cool briefly, then thinly slice.
+		3.Cook noodles according to packet instructions, adding edamame in the last minute of cooking. Drain and rinse briefly with cold water. Transfer to a large bowl.
+		4.Add dressing and toss to combine. Top noodles with sliced tuna, edamame, shallot, pickled ginger and shiso leaves to serve.
+	</Paragraph>
+
+    <Paragraph Style="{StaticResource finalText}">
+		Level up your tuna lunch with this fancy Asian-inspired salad!
+	</Paragraph>
+</FlowDocument>

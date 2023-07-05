@@ -1,0 +1,44 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FlowDocument.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FlowDocument.Resources>
+    
+    <Paragraph Style="{StaticResource header}">
+		Garlic and parmesan potato soup
+	</Paragraph>
+	
+    <Paragraph Style="{StaticResource text}">
+        <Figure Width="320" Padding="5" HorizontalAnchor="ColumnRight">
+            <BlockUIContainer>
+                <Image Source="soup.jpeg"/>
+            </BlockUIContainer>
+        </Figure>
+    </Paragraph>
+			
+    <Paragraph Style="{StaticResource text}" Margin="33">
+		INGREDIENTS
+		1.2kg chat potatoes
+		1 cup (80g) finely grated parmesan, plus extra to serve
+		6 garlic cloves, unpeeled
+		1/4 cup (60ml) extra virgin olive oil
+		6 thyme sprigs, leaves picked
+		3 long green shallots, thinly sliced, plus extra to serve
+		2 1/2 tsp vegetable stock powder
+		200g sour cream, plus extra to serve
+	</Paragraph>
+	<Paragraph Style="{StaticResource text}" Margin="33">
+		METHOD
+		   1.Preheat oven to 200°C/180°C fan-forced. Halve smaller chat potatoes and slice larger potatoes about 2cm thick. Place in a 34cm x 24cm, 7cm-deep baking dish with the parmesan, garlic, oil and thyme. Season generously and toss to coat. Roast for 40 minutes or until golden brown and tender.
+		   2.Remove from oven. Squeeze garlic cloves from their skins back into the baking dish. Add shallot, stock powder and 1L (4 cups) boiling water. Add sour cream, stir to combine, then bake for a further 20 minutes.
+		   3.Remove 8 potato halves from the dish to use as a garnish, then carefully use a stick blender to puree remaining mixture to a smooth consistency (adding a little extra boiling water if you prefer a thinner soup). Season to taste and divide among bowls. Top with extra sour cream, reserved roast potatoes, extra spring onion and extra finely grated parmesan to serve.
+	</Paragraph>
+
+    <Paragraph Style="{StaticResource finalText}">
+        Готувати – це просто!
+    </Paragraph>
+</FlowDocument>
