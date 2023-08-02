@@ -1,0 +1,68 @@
+1. 
+SELECT p.name AS 'название', c.name AS 'категория', s.name AS 'поставщик'
+FROM Product AS p
+JOIN Category AS c ON c.id = p.id_category
+JOIN Delivery AS d ON p.id = d.id_product
+JOIN Supplier AS s ON s.id = d.id_supplier
+WHERE s.name IN ('ООО Паньки', 'ООО Какие люди')
+
+2.
+SELECT p.name AS 'название', c.name AS 'категория', s.name AS 'поставщик', pr.name AS 'производитель'
+FROM Product AS p
+JOIN Delivery AS d ON p.id = d.id_product
+JOIN Supplier AS s ON s.id = d.id_supplier
+JOIN Producer as pr ON pr.id = p.id_producer
+JOIN Category AS c ON c.id = p.id_category
+WHERE pr.name NOT LIKE '%[АКМ]%' AND c.name != 'Крупы'
+
+
+3.
+SELECT p.name AS 'название', c.name AS 'категория', s.name AS 'поставщик', d.price AS 'цена поставки',
+d.date_of_delivery AS 'дата поставки', co.name AS 'страна производителя'
+FROM Product AS p
+JOIN Category AS c ON c.id = p.id_category
+JOIN Delivery AS d ON p.id = d.id_product
+JOIN Supplier AS s ON s.id = d.id_supplier
+JOIN Producer AS pr ON pr.id = p.id_producer
+JOIN Address AS a ON a.id = pr.id_address
+JOIN City AS ci ON ci.id = a.id_city
+JOIN Region AS r ON r.id = ci.id_region
+JOIN Country AS co ON co.id = r.id_country
+WHERE co.name NOT IN ('Украина', 'Молдова', 'Польша') AND d.price < 2000
+AND d.date_of_delivery BETWEEN '2023-05-10' AND GETDATE()
+
+4. 
+SELECT p.name AS 'название', c.name AS 'категория', s.quantity AS 'продано', sup.name AS 'поставщик', pr.name AS 'производитель'
+FROM Product AS p
+JOIN Category AS c ON c.id = p.id_category
+JOIN Sale AS s ON p.id = s.id_product
+JOIN Delivery AS d ON p.id = d.id_product
+JOIN Supplier AS sup ON sup.id = d.id_supplier
+JOIN Producer AS pr ON pr.id = p.id_producer
+WHERE c.name IN ('Кондитерские изделия', 'Безалкогольные напитки') AND s.quantity > 100
+
+
+5. 
+SELECT p.name AS 'название', c.name AS 'категория', s.name AS 'поставщик',
+d.date_of_delivery AS 'дата поставки', d.price AS 'цена поставки'
+FROM Product AS p
+JOIN Delivery AS d ON p.id = d.id_product
+JOIN Supplier AS s ON s.id = d.id_supplier
+JOIN Category AS c ON c.id = p.id_category
+WHERE s.name IN ('Рошен', 'Наша линия', 'Киивхлиб')
+ORDER BY p.name
+
+
+6. 
+SELECT p.name AS 'название', pr.name AS 'производитель', (co.name + ', ' + c.name + ', ' + a.street) AS 'полный адрес',
+cat.name AS 'категория', s.date_of_sale AS 'дата продажи', s.price AS 'стоимость продажи'
+FROM Product AS p
+JOIN Producer AS pr ON pr.id = p.id_producer
+JOIN Address AS a ON a.id = pr.id_address
+JOIN City AS c ON c.id = a.id_city
+JOIN Region AS r ON r.id = c.id_region
+JOIN Country AS co ON co.id = r.id_country
+JOIN Category AS cat ON cat.id = p.id_category
+JOIN Sale AS s ON p.id = s.id_product
+WHERE pr.name NOT IN ('Coca Cola', 'Pepsi')
+ORDER BY s.price DESC
