@@ -1,0 +1,84 @@
+1.
+SELECT p.name
+FROM Product AS p
+WHERE p.id IN (SELECT TOP 1 id_product
+               FROM Sale AS s
+	       GROUP BY id_product
+	       ORDER BY COUNT(id_product) DESC)
+
+2.
+SELECT c.name AS 'название', CAST(COUNT(p.name) AS float) / (SELECT COUNT(*) FROM Product) * 100 AS '%'
+FROM Product AS p
+JOIN Category AS c ON c.id = p.id_category
+JOIN Sale AS s ON p.id = s.id_product
+GROUP BY c.name
+
+3.
+SELECT s.name AS 'поставщики'
+FROM Supplier AS s
+WHERE s.id IN (SELECT id_supplier
+               FROM Delivery AS d
+	       WHERE d.id_product IN (SELECT id
+	                              FROM Product AS p
+		                      WHERE p.name NOT LIKE 'Йогурт'))
+
+
+4. 
+SELECT pr.name AS 'производитель'
+FROM Producer AS pr
+WHERE pr.id_address IN (SELECT a.id
+			FROM Address AS a
+			WHERE a.id_city IN (SELECT c.id
+					    FROM City AS c
+					    WHERE c.id_region IN (SELECT r.id
+					                          FROM Region AS r
+								  WHERE r.id_country = (SELECT co.id
+											FROM Country AS co
+											WHERE co.id = (SELECT r.id_country 
+												       FROM Region AS r
+												       WHERE r.id = (SELECT c.id_region
+													             FROM City AS c
+														     WHERE c.id = (SELECT a.id_city
+																   FROM Address AS a
+																   WHERE a.id = (SELECT id_address
+																		 FROM Producer AS pr
+																		 WHERE pr.name = 'Зеленоглазое такси'))))))))
+
+
+5.
+SELECT pr.name AS 'производитель'
+FROM Producer AS pr
+WHERE EXISTS (SELECT p.id_producer
+              FROM Product AS p
+              WHERE pr.id = p.id_producer)
+GROUP BY pr.name
+HAVING COUNT(*) > (SELECT COUNT(*)  -- кол-во товаров 'ООО «Самтаймс»'
+	           FROM Product AS p
+		   WHERE p.id_producer IN (SELECT pr.id
+					   FROM Producer AS pr
+					   WHERE pr.name LIKE 'ООО "Самтаймс"'))
+
+
+6. 
+SELECT s.date_of_sale AS 'дата продажи', SUM(s.quantity) AS 'количество продаж'
+FROM Sale AS s
+WHERE s.date_of_sale BETWEEN '2023-01-01' AND GETDATE()
+GROUP BY s.date_of_sale
+ORDER BY 1 DESC
+
+7. 
+SELECT temp.category AS 'категория', COUNT(temp.name) AS 'количество товаров для списания'
+FROM  
+(
+    SELECT p.name, c.name AS 'category'
+    FROM Product AS p
+    JOIN Category AS c ON c.id = p.id_category
+
+    EXCEPT  
+    SELECT p.name, c.name AS 'category'
+    FROM Product AS p
+    JOIN Category AS c ON c.id = p.id_category
+    JOIN Sale AS s ON p.id = s.id_product
+    WHERE s.quantity IS NOT NULL AND s.date_of_sale > DATEADD(MONTH, -3, GETDATE())
+) AS temp
+GROUP BY temp.category  
