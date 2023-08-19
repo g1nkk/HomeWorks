@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Kirill\ADO-P12\obj\Debug\net6.0-windows\
+C:\Users\Kirill\source\repos\HomeWorks\ADONET_HW\obj\Debug\net6.0-windows\
 ADO_P12
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Kirill\ADO-P12\App.xaml
+C:\Users\Kirill\source\repos\HomeWorks\ADONET_HW\App.xaml
 2-466429585
 
 41819293602
 2091604522097
 Views\MainWindow.xaml;Views\StartWindow.xaml;
 
-True
+False
 

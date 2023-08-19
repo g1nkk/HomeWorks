@@ -12,8 +12,5 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="sql\" />
-  </ItemGroup>
 
 </Project>

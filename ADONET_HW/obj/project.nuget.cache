@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Rhd/b2C6+hQq+xvtn1e3Fskq6HYtfyFkqyDgx+Y5i9yAgsCuGPvJeHdmfUSJm40JmMSwoHfbl+rlAwzUbys12Q==",
+  "dgSpecHash": "QC6NXilPV+2moxBeJ8cp0Fn3h2BoeUjKGtVjB/BikrXkUVcxgFPsUaUdCrLbMOYFuv2lWvOW9LfAKfefY3p2kg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kirill\\ADO-P12\\ADO-P12.csproj",
+  "projectFilePath": "C:\\Users\\Kirill\\source\\repos\\HomeWorks\\ADONET_HW\\ADO-P12.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kirill\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Kirill\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
