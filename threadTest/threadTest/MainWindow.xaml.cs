@@ -19,10 +19,10 @@ namespace threadTest
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+     public partial class MainWindow : Window
     {
         private CancellationTokenSource cancellationTokenSource;
-        private int threadCount = 3; 
+        private int threadCount = 3;
 
         public MainWindow()
         {
@@ -38,6 +38,7 @@ namespace threadTest
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
             cancellationTokenSource?.Cancel();
+            cancellationTokenSource?.Dispose();
         }
 
         private async Task StartThreadsAsync()
@@ -45,11 +46,12 @@ namespace threadTest
             for (int i = 1; i <= threadCount; i++)
             {
                 int threadNumber = i;
-                Task.Run(() => RunThread(threadNumber, cancellationTokenSource.Token));
+                int duration = GetRandomDuration();
+                Task.Run(() => RunThread(threadNumber, cancellationTokenSource.Token, duration));
             }
         }
 
-        private void RunThread(int threadNumber, CancellationToken cancellationToken)
+        private void RunThread(int threadNumber, CancellationToken cancellationToken, int duration)
         {
             for (int i = 1; i <= 100; i++)
             {
@@ -57,15 +59,11 @@ namespace threadTest
                 {
                     return;
                 }
-                
-                Thread.Sleep(100);
-
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     UpdateProgressBar(threadNumber, i);
                 });
-
-                Thread.Sleep(TimeSpan.FromMilliseconds(50));
+                Thread.Sleep(duration / 100);
             }
         }
 
@@ -86,6 +84,12 @@ namespace threadTest
             }
 
             progressBar.Value = value;
+        }
+
+        private int GetRandomDuration()
+        {
+            Random random = new Random();
+            return random.Next(100, 8000);
         }
     }
 }
