@@ -20,7 +20,7 @@ namespace NetworkProgram
 {
     public partial class AuthWindow : Window
     {
-        private string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\C#\ШАГ_СетевоеПрограммирование\NetworkProgram\NetworkProgram\Database.mdf;Integrated Security=True";
+        private string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\step\NETWORK\Database.mdf;Integrated Security=True";
 
         public AuthWindow()
         {

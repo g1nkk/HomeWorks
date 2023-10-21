@@ -9,12 +9,12 @@ NetworkProgram
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Kirill\source\repos\HomeWorks\NETWORK\App.xaml
-51822338210
+C:\Users\Kirill\source\repos\HomeWorks\NETWORK\View\App.xaml
+5861471495
 
-10782528255
+10-1610777182
 2091604522097
-AuthWindow.xaml;ClientWindow.xaml;EmailWindow.xaml;MainWindow.xaml;ServerWindow.xaml;
+MainWindow.xaml;View\AuthWindow.xaml;View\ClientWindow.xaml;View\EmailWindow.xaml;View\ServerWindow.xaml;
 
 False
 
