@@ -1,0 +1,63 @@
+﻿<Window x:Class="NetworkProgram.ServerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetworkProgram"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="ServerWindow" Height="450" Width="300" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <GroupBox Header="Настройки">
+            <Grid Margin="2 5">
+                <Grid.Resources>
+                    <Style TargetType="TextBox">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                </Grid.Resources>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Host (IP)"/>
+                <TextBlock Grid.Row="1" Text="Port"/>
+                <TextBlock Grid.Row="2" Text="Charset"/>
+                <TextBox Grid.Column="1" x:Name="textBoxHost" Text="127.0.0.1"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="textBoxPort" Text="9329"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="textBoxCharset" Text="UTF-8"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Header="Статус">
+            <DockPanel>
+                <Label x:Name="statusLabel" DockPanel.Dock="Top" Content="Выключено" Background="Pink" HorizontalContentAlignment="Center"/>
+                <Button x:Name="btnSwitchServer" Content="Включить" Click="SwitchServerBtn_Click"/>
+            </DockPanel>
+        </GroupBox>
+
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock x:Name="serverLog" TextWrapping="Wrap"/>
+        </ScrollViewer>
+    </Grid>
+    
+</Window>

@@ -1,0 +1,9 @@
+{
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "email": "sevomiapp@gmail.com",
+    "password": "ddxqvohwvnvvanmh",
+    "ssl": true
+  }
+}

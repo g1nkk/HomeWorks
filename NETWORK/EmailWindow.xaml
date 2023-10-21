@@ -1,0 +1,30 @@
+﻿<Window x:Class="NetworkProgram.EmailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetworkProgram"
+        mc:Ignorable="d"
+        Title="EmailWindow" Height="400" Width="250" WindowStartupLocation="CenterScreen">
+    
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Кому:"/>
+            <TextBox x:Name="textBoxTo" Text="burlakak222@gmail.com"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Тема:"/>
+            <TextBox x:Name="textBoxSubject" Text="Hello, from C# WPF code"/>
+        </StackPanel>
+        <TextBox x:Name="textBoxContent" Text="Добрый день! Этот текст отправлен из программы C# кода))" TextWrapping="Wrap" Margin="5 5"/>
+        <Button x:Name="BtnSendButton1" Content="Отправить" Margin="10 5" Click="BtnSendButton1_Click"/>
+
+        <TextBox x:Name="textBoxHtml" Text="&lt;h2>Добрий день!&lt;/h2> Вас приветствует программа &lt;b style='color:tomato'>Send Email&lt;/b>"
+                 TextWrapping="Wrap" Margin="5 5"/>
+        <Button x:Name="BtnSendButton2" Content="Отправить" Margin="10 5" Click="BtnSendButton2_Click"/>
+
+        <TextBox x:Name="textBoxHtmlHW" TextWrapping="Wrap" Margin="5 5"/>
+        <Button x:Name="BtnSendButtonHW" Content="Отправить" Margin="10 5" Click="BtnSendButtonHW_Click"/>
+    </StackPanel>
+    
+</Window>
